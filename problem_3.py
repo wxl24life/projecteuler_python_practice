@@ -125,3 +125,5 @@ if __name__ == "__main__":
     print find_max_prime_factors_second_version(9)
     print find_max_prime_factors_second_version(13195)
     print find_max_prime_factors_second_version(600851475143)
+
+    print find_max_prime_factors_third_version(600851475143)
