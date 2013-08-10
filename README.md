@@ -1,1 +1,1 @@
-I have been learning pyhon for somedays, and want to do some real coding practices with this programming language. Then I found [project euler](projecteuler.net), a famous websit with many challenging coding problems. I will try to get through it one by one.
+I have been learning python for some days, and want to do some real coding practices with this programming language. Then I found [project euler](projecteuler.net), a famous websit with many challenging coding problems. I will try to get through it one by one.
