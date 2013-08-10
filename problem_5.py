@@ -1,4 +1,5 @@
 # Smallest multiple
+import datetime
 
 ########################
 """
@@ -70,6 +71,7 @@ def find_lcm_second_version(a, b):
 
 
 def find_smalllest_multiple_of_consecutive_integer(a, b):
+    time1 = datetime.datetime.now()
     if a > b:
         raise Exception("invalid range: a should smaller than b")
 
@@ -83,6 +85,8 @@ def find_smalllest_multiple_of_consecutive_integer(a, b):
             j = j + 1
         li = tmp_list
 
+    time2 = datetime.datetime.now()
+    print "Total runing time: ", time2-time1
     return li[0]
 
 
@@ -102,6 +106,18 @@ if __name__ == "__main__":
 
     print find_smalllest_multiple_of_consecutive_integer(1, 10)
     print find_smalllest_multiple_of_consecutive_integer(1, 20)
+
+    print find_smalllest_multiple_of_consecutive_integer(1, 30)
+    print find_smalllest_multiple_of_consecutive_integer(1, 40)
+    print find_smalllest_multiple_of_consecutive_integer(1, 50)
+    print find_smalllest_multiple_of_consecutive_integer(1, 100)
+    print find_smalllest_multiple_of_consecutive_integer(1, 200)
+    print find_smalllest_multiple_of_consecutive_integer(1, 500)
+
+    # need 13+s on my computer
+    print find_smalllest_multiple_of_consecutive_integer(1, 1000)
+
+
 
 
     #print find_smalllest_multiple_of_consecutive_integer(5, 4) # should raise exception
