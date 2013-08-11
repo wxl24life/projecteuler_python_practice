@@ -49,10 +49,12 @@ hack the LCM """
 
 def find_lcd(a, b):
     """ assume a < b """
+    # if b < a:
+    #     tmp = b
+    #     b = a
+    #     a = tmp
     if b < a:
-        tmp = b
-        b = a
-        a = tmp
+        a,b = b,a # a simpler and better way
 
     if b % a == 0:
         return a
@@ -62,10 +64,12 @@ def find_lcd(a, b):
     a = r
     return find_lcd(a, b)
 
-""" using lcd to hack lcm
-lcm = lcd * (a / lcd) * (b / lcd) = a * b / lcd
-"""
 def find_lcm_second_version(a, b):
+    """using lcd to hack lcm
+
+        lcm = lcd * (a / lcd) * (b / lcd) = a * b / lcd
+
+    """
     lcd = find_lcd(a, b)
     return a * b / lcd
 
