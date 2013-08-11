@@ -2,8 +2,8 @@
 import datetime
 
 ########################
-"""
-The following shows that, we can use LCM(Least Common Multiple) iteratively to get the smallest multiple...
+"""The following shows that, we can use LCM(Least Common Multiple)
+iteratively to get the smallest multiple...
 
 1 2 ==> 2
 2 3 ==> 6
@@ -27,16 +27,18 @@ The following shows that, we can use LCM(Least Common Multiple) iteratively to g
 
 """
 ######################
-""" Oops... The efficiency of following version of algorithem
+"""Oops... The efficiency of following version of algorithem
 is incrediblly poor... """
 ######################
+
+
 # find LCM(Least Common Multiple) of two integer
 def find_lcm_first_version(a, b):
     """ assume a < b """
     if b % a == 0:
         return b
 
-    for i in range(1, a+1):
+    for i in range(1, a + 1):
         c = i * b
         if c % a == 0:
             return c
@@ -47,6 +49,7 @@ a beter solution -- using LCD (Largest Common Divisor) to
 hack the LCM """
 ######################
 
+
 def find_lcd(a, b):
     """ assume a < b """
     # if b < a:
@@ -54,7 +57,7 @@ def find_lcd(a, b):
     #     b = a
     #     a = tmp
     if b < a:
-        a,b = b,a # a simpler and better way
+        a, b = b, a  # a simpler and better way
 
     if b % a == 0:
         return a
@@ -63,6 +66,7 @@ def find_lcd(a, b):
     b = a
     a = r
     return find_lcd(a, b)
+
 
 def find_lcm_second_version(a, b):
     """using lcd to hack lcm
@@ -79,18 +83,18 @@ def find_smalllest_multiple_of_consecutive_integer(a, b):
     if a > b:
         raise Exception("invalid range: a should smaller than b")
 
-    li = range(a, b+1)
+    li = range(a, b + 1)
     while len(li) > 1:
         tmp_list = []
         j = 1
         while j < len(li):
-            lcm = find_lcm_second_version(li[j-1], li[j])
+            lcm = find_lcm_second_version(li[j - 1], li[j])
             tmp_list.append(lcm)
             j = j + 1
         li = tmp_list
 
     time2 = datetime.datetime.now()
-    print "Total runing time: ", time2-time1
+    print "Total runing time: ", time2 - time1
     return li[0]
 
 
@@ -123,8 +127,5 @@ if __name__ == "__main__":
 
 
 
-
-    #print find_smalllest_multiple_of_consecutive_integer(5, 4) # should raise exception
-
-
-
+    # should raise exception
+    #print find_smalllest_multiple_of_consecutive_integer(5, 4)

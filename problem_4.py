@@ -1,5 +1,6 @@
 # Largest palindrome product
 
+
 def is_palindrome(n):
     """ n should be an non-negative integer"""
     a = []
@@ -8,7 +9,7 @@ def is_palindrome(n):
         k = tmp % 10
         a.append(k)
         tmp = tmp / 10
-    a.append(tmp) # append the last digit
+    a.append(tmp)  # append the last digit
 
     size = len(a)
 
@@ -21,6 +22,7 @@ def is_palindrome(n):
         j = j - 1
 
     return True
+
 
 def find_largest_palindrome_product_of_range(a, b):
     largest = -1
@@ -39,16 +41,14 @@ def find_largest_palindrome_product_of_range(a, b):
     return largest
 
 
-
-
-
 if __name__ == "__main__":
     print is_palindrome(1)
     print is_palindrome(0)
-    # print is_palindrome(-1) # wrong! goole key words: python negative devision
+    # print is_palindrome(-1) # wrong! goole key words:
+    # python negative devision
+
     print is_palindrome(9009)
     print is_palindrome(10010)
-
 
     #print find_largest_palindrome_product_of_range(10, 99)
     print find_largest_palindrome_product_of_range(100, 999)
